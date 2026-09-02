@@ -1,0 +1,13 @@
+node_modules/
+.env
+.DS_Store
+*.log
+uploads/
+*.db
+*.sqlite
+.vscode/
+.idea/
+dist/
+build/
+.env
+.claude/
