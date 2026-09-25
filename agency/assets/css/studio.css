@@ -356,7 +356,7 @@ img, svg { display: block; max-width: 100%; }
   transform: rotate(-48deg);
 }
 
-/* ---------- 4D tesseract --------------------------------------- */
+/* ---------- 3D wireframe whale ---------------------------------- */
 
 .section-craft { background: #fff; }
 .craft-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
@@ -364,8 +364,12 @@ img, svg { display: block; max-width: 100%; }
 .tess-stage { position: relative; max-width: 440px; width: 100%; margin-inline: auto; touch-action: pan-y; cursor: grab; }
 .tess-stage.dragging { cursor: grabbing; }
 .tess { width: 100%; height: auto; aspect-ratio: 1; overflow: visible; }
-.tess line { stroke: var(--black); stroke-linecap: round; }
-.tess circle { fill: #fff; stroke: var(--black); stroke-width: 1.2; }
+.band { fill: none; stroke: var(--black); stroke-linecap: round; stroke-linejoin: round; }
+.band.b0 { stroke-width: .7;  opacity: .2; }   /* far side */
+.band.b1 { stroke-width: .9;  opacity: .35; }
+.band.b2 { stroke-width: 1.2; opacity: .65; }
+.band.b3 { stroke-width: 1.7; opacity: .95; }   /* near side */
+.tess circle { fill: #fff; stroke: var(--black); stroke-width: 1; }
 .tess-shadow { fill: color-mix(in srgb, var(--sea) 30%, #fff); }
 .tess-note { right: 0; top: 4%; bottom: auto; transform: rotate(4deg); }
 

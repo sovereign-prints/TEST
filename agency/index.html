@@ -350,21 +350,27 @@
   </div>
 </section>
 
-<!-- 4D ==============================================================
-     A tesseract: a cube in four dimensions, turning through planes
-     that include the fourth axis, projected down to 3D and then to the
-     page. Drawn live as ink lines; drag to spin it. -->
+<!-- 4D WHALE ========================================================
+     A "tesseract" made of whales: two wireframe southern rights at
+     either end of a fourth axis, joined across it, rotating through
+     four dimensions and beating their tails. Drag to spin it. -->
 <section class="section section-craft" id="craft">
   <div class="wrap craft-grid">
     <div class="craft-copy reveal">
       <p class="eyebrow">Things a template can't do</p>
-      <h2>A four-dimensional cube, drawn live in your browser.</h2>
-      <p>This is a tesseract, a cube with a fourth dimension, rotating through directions our world doesn't have. It's a few dozen lines of hand-written code with no plugin, and the same care goes into every site we build.</p>
+      <h2>A four-dimensional whale, drawn live in your browser.</h2>
+      <p>This is a southern right built like a tesseract: two whales joined across a fourth dimension, rotating through directions our world doesn't have. Hand-written code redraws it sixty times a second with no plugin, and the same care goes into every site we build.</p>
     </div>
-    <div class="tess-stage" data-tesseract>
-      <svg class="tess" viewBox="-160 -160 320 320" role="img" aria-label="A hand-drawn tesseract, a four-dimensional cube, slowly rotating">
-        <ellipse class="tess-shadow" cx="0" cy="152" rx="100" ry="8"/>
-        <g filter="url(#rough)" data-tess-edges></g>
+    <div class="tess-stage" data-whale3d>
+      <svg class="tess" viewBox="-160 -160 320 320" role="img" aria-label="A wireframe sketch of a four-dimensional southern right whale, slowly rotating and swimming">
+        <ellipse class="tess-shadow" cx="0" cy="128" rx="130" ry="9"/>
+        <g filter="url(#rough)">
+          <path class="band b0" data-band/>
+          <path class="band b1" data-band/>
+          <path class="band b2" data-band/>
+          <path class="band b3" data-band/>
+          <g data-marks></g>
+        </g>
       </svg>
       <p class="scene-note tess-note" aria-hidden="true">drag to spin ↻</p>
     </div>
