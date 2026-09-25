@@ -230,7 +230,7 @@ img, svg { display: block; max-width: 100%; }
 /* The breach. Head-first to the left: rises nose-up, twists in 3D
    at the top, falls back and rests underwater behind the front swell. */
 .whale-wrap {
-  position: absolute; left: 40%; top: 58%; width: 32%;
+  position: absolute; left: 36%; top: 54%; width: 48%;
   transform-style: preserve-3d;
   transform: translate(10%, 115%) rotate(40deg) rotateY(0deg);
   animation: breach 11s cubic-bezier(.45,.05,.55,.95) 1.2s infinite;
@@ -244,9 +244,9 @@ img, svg { display: block; max-width: 100%; }
   42%, 100% { transform: translate(-42%, 120%) rotate(-42deg) rotateY(70deg); }
 }
 
-.layer > svg.splash { position: absolute; inset: auto; width: 14%; height: auto; top: 71%; opacity: 0; transform-origin: 50% 100%; }
-.splash-a { left: 46%; animation: splash-a 11s ease-out 1.2s infinite; }
-.splash-b { left: 30%; animation: splash-b 11s ease-out 1.2s infinite; }
+.layer > svg.splash { position: absolute; inset: auto; width: 20%; height: auto; top: 68%; opacity: 0; transform-origin: 50% 100%; }
+.layer > svg.splash-a { left: 52%; animation: splash-a 11s ease-out 1.2s infinite; }
+.layer > svg.splash-b { left: 14%; animation: splash-b 11s ease-out 1.2s infinite; }
 @keyframes splash-a {
   0%, 6%    { opacity: 0; transform: scaleY(.2); }
   11%       { opacity: 1; transform: scaleY(1); }
@@ -665,7 +665,7 @@ img, svg { display: block; max-width: 100%; }
   .js .draw { stroke-dashoffset: 0; }
   .js .fade, .js .reveal { opacity: 1; transform: none; }
   .whale-wrap { transform: translate(-14%, -20%) rotate(12deg); }  /* frozen mid-breach */
-  .splash-a { opacity: 1; transform: none; }
+  .layer > svg.splash-a { opacity: 1; transform: none; }
   .spout { opacity: 1; transform: none; }
   .browser { transform: none; }
 }
