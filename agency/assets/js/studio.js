@@ -219,7 +219,7 @@
     var W = 0.75;                        // half-distance between the two whales along w
     var yw = 0.5, zw = 0.25;             // 4D rotation angles
     var yaw = -0.9, pitch = -0.32, roll = 0;
-    var yawV = 0.0022, dragYaw = 0, dragPitch = 0;
+    var yawV = 0.0105, dragYaw = 0, dragPitch = 0;   // auto-rotate: one full turn about every 10s
 
     var rot = function (p, i, j, t) {
       var c = Math.cos(t), s = Math.sin(t), a = p[i], b = p[j];
@@ -295,9 +295,9 @@
         var dt = last ? Math.min(3, (t - last) / 16.7) : 1;   // frames at 60fps, capped after a stall
         last = t;
         beat += 0.05 * dt;
-        zw += (0.0045 + dragYaw) * dt;           // turning through the fourth dimension
+        zw += (0.006 + dragYaw) * dt;            // turning through the fourth dimension
         yw += 0.0019 * dt;
-        yaw += yawV * dt;
+        yaw += (yawV + dragYaw * 0.5) * dt;
         pitch = Math.max(-1.1, Math.min(0.6, pitch + dragPitch * dt));
         pitch += (-0.32 - pitch) * 0.01 * dt;                  // drifts back to the resting view
         roll = Math.sin(beat * 0.5) * 0.06;
