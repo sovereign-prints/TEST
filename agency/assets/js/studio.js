@@ -51,6 +51,30 @@
     });
   });
 
+  /* ---- phone carousels: a dot per card, the current one long -- */
+  document.querySelectorAll('.carousel').forEach(function (track) {
+    var cards = Array.prototype.slice.call(track.children);
+    var dots = document.createElement('div');
+    dots.className = 'dots';
+    dots.setAttribute('aria-hidden', 'true');
+    cards.forEach(function () { dots.appendChild(document.createElement('i')); });
+    track.after(dots);
+
+    var mark = function () {
+      var mid = track.scrollLeft + track.clientWidth / 2, best = 0, bestD = Infinity;
+      cards.forEach(function (c, i) {
+        var d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid);
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      Array.prototype.forEach.call(dots.children, function (dot, i) { dot.classList.toggle('on', i === best); });
+    };
+    var pending = false;
+    track.addEventListener('scroll', function () {
+      if (!pending) { pending = true; requestAnimationFrame(function () { pending = false; mark(); }); }
+    }, { passive: true });
+    mark();
+  });
+
   /* ---- plan buttons prefill the contact form ------------------ */
   var planSelect = document.querySelector('[data-contact] select[name="plan"]');
   document.querySelectorAll('[data-plan]').forEach(function (btn) {

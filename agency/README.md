@@ -22,7 +22,8 @@ Serve from the repo root, not from inside `agency/`, because the portfolio secti
 
 ## How it's built
 
-- `assets/css/studio.css`: the Sketchbook Coast palette (light only) lives in `:root` tokens, and every drawing uses those tokens.
-- The hero is a "pop-up book" of seven SVG layers at different 3D depths (`--z`). They tilt with the mouse, sway on their own on touch screens, and a southern right whale breaches in 3D.
+- `assets/css/studio.css`: the palette lives in `:root` tokens and every drawing uses them. It's light only: off-white paper, near-black ink, sea-blue and sage washes, one deep sea-blue highlight, and no orange.
+- **Phones:** one swipe moves exactly one full-screen section (CSS scroll-snap). Rows of cards become sideways carousels with dots, so every section fits one screen from 360×740 up. A compact tier handles short phones like the iPhone SE.
+- The hero is a "pop-up book" of seven SVG layers at different 3D depths (`--z`). They tilt with the mouse, sway on their own on touch screens, and a southern right whale, drawn as a black ink line drawing, breaches in 3D.
 - Flip cards, pointer-tilt cards, scroll-unfolding sections and a browser mock-up that swings flat as you scroll to it are all done in CSS 3D plus `assets/js/studio.js`.
 - All motion switches off for visitors who have "reduce motion" turned on.
