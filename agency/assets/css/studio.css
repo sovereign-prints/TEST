@@ -356,6 +356,28 @@ img, svg { display: block; max-width: 100%; }
   transform: rotate(-48deg);
 }
 
+/* ---------- 4D tesseract --------------------------------------- */
+
+.section-craft { background: #fff; }
+.craft-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
+.craft-copy p:not(.eyebrow) { max-width: 30em; }
+.tess-stage { position: relative; max-width: 440px; width: 100%; margin-inline: auto; touch-action: pan-y; cursor: grab; }
+.tess-stage.dragging { cursor: grabbing; }
+.tess { width: 100%; height: auto; aspect-ratio: 1; overflow: visible; }
+.tess line { stroke: var(--black); stroke-linecap: round; }
+.tess circle { fill: #fff; stroke: var(--black); stroke-width: 1.2; }
+.tess-shadow { fill: color-mix(in srgb, var(--sea) 30%, #fff); }
+.tess-note { right: 0; top: 4%; bottom: auto; transform: rotate(4deg); }
+
+@media (max-width: 900px) {
+  .craft-grid { grid-template-columns: 1fr; gap: 8px; }
+  .tess-stage { order: -1; max-width: 300px; }
+}
+@media (max-width: 900px) and (min-height: 600px) and (max-height: 800px) {
+  .tess-stage { max-width: 220px; }
+  .craft-copy p:not(.eyebrow) { font-size: .88rem; }
+}
+
 /* ---------- process -------------------------------------------- */
 
 .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; position: relative; }
